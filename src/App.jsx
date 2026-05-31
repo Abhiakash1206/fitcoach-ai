@@ -24,14 +24,12 @@ export default function App() {
   const [loading, setLoading]   = useState(false);
   const [activeNav, setActiveNav] = useState("coach");
   const bottomRef = useRef(null);
-  
-useEffect(() => {
-  console.log("Loading session:", SESSION_ID);
-  loadMessages(SESSION_ID).then(msgs => {
-    console.log("Loaded messages:", msgs);
-    if (msgs.length > 0) setMessages(msgs);
-  });
-}, []);
+
+  useEffect(() => {
+    loadMessages(SESSION_ID).then(msgs => {
+      if (msgs.length > 0) setMessages(msgs);
+    });
+  }, []);
 
   const scrollDown = () =>
     setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth" }), 60);
@@ -66,7 +64,7 @@ useEffect(() => {
         <div className="top-bar-brand">
           <span className="material-symbols-outlined top-bar-logo"
             style={{ fontVariationSettings: "'FILL' 1, 'wght' 700" }}>bolt</span>
-          <span className="top-bar-title">FitCoach AI</span>
+          <span className="top-bar-title">AbiAkshai</span>
         </div>
         <div className="top-bar-actions">
           <button className="icon-btn" aria-label="Search">
@@ -84,13 +82,13 @@ useEffect(() => {
             <div className="welcome-badge">
               <span className="material-symbols-outlined"
                 style={{ fontSize: "14px", color: "var(--primary)", fontVariationSettings: "'FILL' 1" }}>bolt</span>
-              <span>AI Personal Trainer</span>
+              <span>Your AI Fitness Coach</span>
             </div>
             <div className="welcome-icon-wrap">
               <span className="material-symbols-outlined">fitness_center</span>
             </div>
             <h2 className="welcome-heading">
-              Ready to level<br /><span className="accent">up?</span>
+              Train smarter<br /><span className="accent">with AbiAkshai</span>
             </h2>
             <p className="welcome-sub">
               Your AI coach is online. Ask anything about training, nutrition, or recovery.
