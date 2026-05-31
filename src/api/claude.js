@@ -9,8 +9,7 @@ export async function sendMessage(messages) {
   const lastMsg = messages[messages.length - 1].content;
 
   const response = await fetch(
-   "/gemini/v1beta/models/gemini-2.5-flash:generateContent?key=" + import.meta.env.VITE_GEMINI_API_KEY,
-    {
+   "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + import.meta.env.VITE_GEMINI_API_KEY, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
