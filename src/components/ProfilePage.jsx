@@ -13,14 +13,14 @@ export default function ProfilePage() {
   const [profile, setProfile] = useState(DEFAULT_PROFILE);
 
   useEffect(() => {
-    const saved = localStorage.getItem("abiakshai_profile");
+    const saved = localStorage.getItem("GYMRAT AI_profile");
     if (saved) setProfile(JSON.parse(saved));
   }, []);
 
   const updateProfile = (field, value) => {
     const next = { ...profile, [field]: value };
     setProfile(next);
-    localStorage.setItem("abiakshai_profile", JSON.stringify(next));
+    localStorage.setItem("GYMRAT AI_profile", JSON.stringify(next));
   };
 
   return (
